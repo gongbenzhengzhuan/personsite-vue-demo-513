@@ -12,35 +12,17 @@
     <div class="login_box">
       <h1>这里是搜索日志页面</h1>
       <!--说明引入组件是成功的-->
+      <div id="big">
       <el-table
           :data="tableData"
           style="width: 100%">
-        <el-table-column
-            prop="userName"
-            label="用户名"
-            width="180">
-        </el-table-column>
-        <el-table-column
-            prop="roleName"
-            label="角色名"
-            width="180">
-        </el-table-column>
-        <el-table-column
-            prop="subsystem"
-            label="系统名"
-            width="180">
-        </el-table-column>
-        <el-table-column
-            prop="operationType"
-            label="操作类型"
-            width="180">
-        </el-table-column>
-        <el-table-column
-            prop="createTime"
-            label="创建时间"
-            width="180">
-        </el-table-column>
+        <el-table-column prop="userName" label="用户名" align="center"/>
+        <el-table-column prop="roleName" label="角色名" align="center"/>
+        <el-table-column prop="subsystem" label="系统名" align="center"/>
+        <el-table-column prop="operationType" label="操作类型" align="center"/>
+        <el-table-column prop="createTime" label="创建时间" align="center"/>
       </el-table>
+    </div>
     </div>
   </div>
 </template>
@@ -103,7 +85,7 @@ export default {
 }
 .login_box {
   // 宽450像素
-  width: 450px;
+  width: 900px;
   // 高300像素
   height: 300px;
   // 背景颜色
@@ -146,5 +128,10 @@ export default {
       background-color: #eee;
     }
   }
+}
+
+#big {
+  width: 80%;
+  margin: auto;
 }
 </style>

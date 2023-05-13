@@ -9,8 +9,7 @@
   </nav>
   <router-view/>
   <h2>用户管理</h2>
-  <div id="big">
-    <div>
+    <div id="look">
       用户名称：<input type="text" placeholder="请输入用户名称" v-model="productInfo.login">
 <!--      密码：<input type="text" placeholder="请输入密码" v-model="productInfo.password">-->
       <el-select v-model="productInfo.password" class="m-2" placeholder="Select" size="small">
@@ -23,6 +22,7 @@
       </el-select>
       <el-button type="info" size="small" @click="GetUserInfo()">查看</el-button>
     </div>
+  <div id="big">
     <!-- 导入element框架的表格 -->
     <!--    https://blog.csdn.net/qq_38567039/article/details/128057929-->
     <el-table :data="tableData" border style="width: 100%">
@@ -37,15 +37,12 @@
         <el-button type="info" size="small" @click="GetUserInfo()">查看</el-button>
       </el-table-column>
     </el-table>
-    <div>
-      起始页：<input type="number" placeholder="请输入起始页" v-model="productInfo.pageIndex">
-      <br/><br/>
-      页数：<input type="text" placeholder="请输入页数" v-model="productInfo.pageSize">
-      <br/><br/>
-      <el-button type="info1" size="small" @click="GetUserInfo()">查看</el-button>
-    </div>
-
   </div>
+  <div id="page">
+    起始页：<input type="number" placeholder="请输入起始页" v-model="productInfo.pageIndex">
+    页数：<input type="number" placeholder="请输入页数" v-model="productInfo.pageSize">
+  </div>
+
 
   <!-- 模式窗口 -->
   <fieldset>
@@ -236,6 +233,19 @@ h2 {
 #big {
   width: 80%;
   margin: auto;
+}
+
+#look {
+  width: 40%;
+  margin-left: 10%;
+  margin-top: 30px;
+}
+
+#page {
+  width: 40%;
+  margin-left: 10%;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 fieldset {

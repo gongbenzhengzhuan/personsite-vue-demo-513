@@ -10,24 +10,15 @@
   <router-view/>
   <h1>这里是table页面</h1>
   <!--说明引入组件是成功的-->
+  <div id="big">
   <el-table
       :data="tableData"
       style="width: 100%">
-    <el-table-column
-        prop="date"
-        label="日期"
-        width="180">
-    </el-table-column>
-    <el-table-column
-        prop="name"
-        label="姓名"
-        width="180">
-    </el-table-column>
-    <el-table-column
-        prop="address"
-        label="地址">
-    </el-table-column>
+    <el-table-column prop="date" label="日期" align="center"/>
+    <el-table-column prop="name" label="姓名" align="center"/>
+    <el-table-column prop="address" label="地址" align="center"/>
   </el-table>
+  </div>
 </template>
 
 <script>
@@ -115,5 +106,10 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+#big {
+  width: 80%;
+  margin: auto;
 }
 </style>
