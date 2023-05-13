@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <router-link to="/">login</router-link>
+    <router-link to="/">登陆界面</router-link>
   </nav>
   <router-view/>
 </template>
