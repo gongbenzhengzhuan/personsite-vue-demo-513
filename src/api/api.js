@@ -39,7 +39,7 @@ export const login=(data)=> {
 // 用户分页查询
 export const userPageList=(data)=> {
     return request({
-        url: '/vue-project/user/pageList',
+        url: '/vue-project/user/userList',
         method: 'post',
         data
     })

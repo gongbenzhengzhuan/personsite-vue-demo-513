@@ -16,7 +16,7 @@
       style="width: 100%">
     <el-table-column prop="date" label="日期" align="center"/>
     <el-table-column prop="name" label="姓名" align="center"/>
-    <el-table-column prop="address" label="地址" align="center"/>
+    <el-table-column prop="operationType" label="操作类型" align="center"/>
   </el-table>
   </div>
 </template>
@@ -61,7 +61,7 @@ export default {
                       {
                         name: element.userName,
                         date: element.createTime,
-                        address: element.operationType
+                        operationType: element.operationType
                       }
                   );
                 }

@@ -52,6 +52,7 @@ export default {
             }
             if (null === data) return console.log('内容为空')
             console.log(data)
+            this.tableData.splice(0)
             data.forEach(
                 element => {
                   this.tableData.push(

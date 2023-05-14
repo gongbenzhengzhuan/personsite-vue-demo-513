@@ -25,7 +25,7 @@
   <div id="big">
     <!-- 导入element框架的表格 -->
     <!--    https://blog.csdn.net/qq_38567039/article/details/128057929-->
-    <el-table :data="tableData" border style="width: 100%">
+    <el-table :data="tableData" border style="width: 100%" ref="addForm">
       <el-table-column type="selection" width="55" align="center"/>
       <el-table-column prop="id" label="编号" align="center"/>
       <el-table-column prop="login" label="登陆人" align="center"/>
@@ -65,7 +65,7 @@
 </template>
 <script lang="ts">
 /*https://vue3.chengpeiquan.com/component.html*/
-import {onBeforeMount, reactive} from 'vue';
+import {onBeforeMount, reactive,ref} from 'vue';
 import {deleteUser, userAdd, userPageList} from '@/api/api'
 
 export default {
@@ -130,7 +130,8 @@ export default {
     function GetUserInfo() {
       const loginForm = {
         pageIndex: productInfo.pageIndex,
-        pageSize: productInfo.pageSize
+        pageSize: productInfo.pageSize,
+        login: productInfo.login
       }
 
       console.log("loginname:"+productInfo.login)
@@ -145,6 +146,8 @@ export default {
 
             if (null === data) return console.log('内容为空')
             console.log(data)
+            //清空页面数据
+            tableData.splice(0)
             data.forEach(
                 element => {
                   options.push(
@@ -152,7 +155,8 @@ export default {
                         value: element.login,
                         label: element.login
                       }
-                  ),
+                  )
+
                   tableData.push(
                       {
                         id: element.id,
