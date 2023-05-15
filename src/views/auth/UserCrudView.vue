@@ -138,6 +138,8 @@ export default {
       console.log("productInfo.password:"+productInfo.password)
       console.log("pageindex:"+loginForm.pageIndex)
       console.log("pagesize:"+loginForm.pageSize)
+      const tokenstr = window.sessionStorage.getItem("token")
+      console.log("token:"+tokenstr)
       userPageList(loginForm).then(
           response => {
             let data = response.data;
