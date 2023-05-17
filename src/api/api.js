@@ -9,7 +9,7 @@ export const getAllData = params => {
 };
 
 export const getLabel=() => {
-    return request(`/vue-project/datasystem-client/labelManage/getLabelFeature?id=10991`);
+    return axios.get(`/vue-project/datasystem-client/labelManage/getLabelFeature?id=10991`,{withCredentials: true});
 };
 
 export function getArticleList (id) {

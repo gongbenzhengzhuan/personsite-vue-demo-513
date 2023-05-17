@@ -5,12 +5,16 @@
 const { defineConfig } = require('@vue/cli-service')
 const port = process.env.port
 module.exports = defineConfig({
+  publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
+  outputDir: 'dist',
+  indexPath: 'index.html',
+  lintOnSave: false,
   transpileDependencies: true,
   devServer: {
     port: 5173,
     open: true
   },
-  lintOnSave: process.env.ENV === 'production'
+ // lintOnSave: process.env.ENV === 'production'
   //lintOnSave:false
 })
 // https://blog.csdn.net/qq_45334976/article/details/125113481
