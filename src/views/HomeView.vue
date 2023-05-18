@@ -8,7 +8,4 @@
     <router-link to="/monitor">监控界面</router-link>
   </nav>
   <router-view/>
-  <div class="about">
-    <h1>欢迎大家</h1>
-  </div>
 </template>

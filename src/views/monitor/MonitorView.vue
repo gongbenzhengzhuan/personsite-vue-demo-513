@@ -1,13 +1,4 @@
 <template>
-  <nav>
-    <router-link to="/home">主页页面</router-link> |
-    <router-link to="/table">搜索界面</router-link> |
-    <router-link to="/searchLogView">搜索日志界面</router-link> |
-    <router-link to="/roleView">角色界面</router-link> |
-    <router-link to="/userCrudView">用户界面</router-link> |
-    <router-link to="/monitor">监控界面</router-link>
-  </nav>
-  <router-view/>
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>

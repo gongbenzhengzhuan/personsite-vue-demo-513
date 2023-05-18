@@ -1,13 +1,4 @@
 <template>
-  <nav>
-    <router-link to="/home">主页页面</router-link> |
-    <router-link to="/table">搜索界面</router-link> |
-    <router-link to="/searchLogView">搜索日志界面</router-link> |
-    <router-link to="/roleView">角色界面</router-link> |
-    <router-link to="/userCrudView">用户界面</router-link> |
-    <router-link to="/monitor">监控界面</router-link>
-  </nav>
-  <router-view/>
   <div class="login_container">
     <div class="login_box">
       <h1>这里是搜索日志页面</h1>

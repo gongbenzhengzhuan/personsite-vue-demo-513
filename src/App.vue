@@ -1,8 +1,9 @@
 <template>
-  <nav>
-    <router-link to="/">登陆界面</router-link>
-  </nav>
-  <router-view/>
+<!--  <nav>-->
+<!--    <router-link to="/"></router-link>-->
+<!--  </nav>-->
+<!--  <router-view/>-->
+  <router-view />
 </template>
 <script lang="ts" setup>
 </script>

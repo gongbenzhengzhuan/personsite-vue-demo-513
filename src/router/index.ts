@@ -2,42 +2,45 @@ import { createRouter, createWebHistory, RouteRecordRaw,createWebHashHistory } f
 import HomeView from '../views/HomeView.vue'
 
 const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/home',
-    name: 'home',
-    component: HomeView
-  },
+
   {
     path: '/',
     name: 'login',
     component: () => import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
   },
   {
-    path: '/table',
-    name: 'table',
-    component: () => import(/* webpackChunkName: "about" */ '../views/client/TableView.vue')
-  },
-  {
-    path: '/monitor',
-    name: 'monitor',
-    component: () => import(/* webpackChunkName: "about" */ '../views/monitor/MonitorView.vue')
-  },
-  // manage
-  {
-    path: '/searchLogView',
-    name: 'searchLogView',
-    component: () => import(/* webpackChunkName: "about" */ '../views/manage/SearchLogView.vue')
-  },
-  // auth
-  {
-    path: '/roleView',
-    name: 'roleView',
-    component: () => import(/* webpackChunkName: "about" */ '../views/auth/RoleView.vue')
-  },
-  {
-    path: '/userCrudView',
-    name: 'userCrudView',
-    component: () => import(/* webpackChunkName: "about" */ '../views/auth/UserCrudView.vue')
+    path: '/home',
+    name: 'home',
+    component: HomeView,
+    children: [
+      {
+        path: '/table',
+        name: 'table',
+        component: () => import(/* webpackChunkName: "about" */ '../views/client/TableView.vue')
+      },
+      {
+        path: '/monitor',
+        name: 'monitor',
+        component: () => import(/* webpackChunkName: "about" */ '../views/monitor/MonitorView.vue')
+      },
+      // manage
+      {
+        path: '/searchLogView',
+        name: 'searchLogView',
+        component: () => import(/* webpackChunkName: "about" */ '../views/manage/SearchLogView.vue')
+      },
+      // auth
+      {
+        path: '/roleView',
+        name: 'roleView',
+        component: () => import(/* webpackChunkName: "about" */ '../views/auth/RoleView.vue')
+      },
+      {
+        path: '/userCrudView',
+        name: 'userCrudView',
+        component: () => import(/* webpackChunkName: "about" */ '../views/auth/UserCrudView.vue')
+      },
+    ],
   }
 ]
 
