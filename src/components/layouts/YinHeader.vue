@@ -3,9 +3,9 @@
   <br/>
   <span>{{ musicName }}</span>
   <button @click="click">换一个</button>
-<!--
+  <br/>
   <yin-header-nav class="yin-header-nav" :styleList="headerNavList" :activeName="activeNavName" @click="goPage">调整</yin-header-nav>
--->
+
 
 </template>
 
@@ -28,7 +28,7 @@ export default defineComponent({
     YinHeaderNav,
   },
   setup() {
-   // const { proxy } = getCurrentInstance();
+    const { proxy } = getCurrentInstance() as any;
     const { getUserSex } = mixin();
     const store = useStore();
     const musicName = ref();
@@ -43,12 +43,12 @@ export default defineComponent({
       //musicName.value = MUSICNAME+MULTIMUSICNAME.pop().label
     };
 
-    // function goPage() {
-    //   proxy.$router.push({ path: "/home"});
-    // }
+    function goPage() {
+      proxy.$router.push({ path: "/home"});
+    }
 
     return {
-    //  goPage,
+      goPage,
       headerNavList,
       MUSICNAME,
       MULTIMUSICNAME,

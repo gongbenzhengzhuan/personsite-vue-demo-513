@@ -1,8 +1,8 @@
 <template>
   <ul class="yin-header-nav">
-<!--    <li :class="{ active: item.name === activeName }" v-for="item in styleList" :key="item.path" @click="handleChangeView(item)">-->
-<!--      {{ item.name }}-->
-<!--    </li>-->
+    <li :class="{ active: item.name === activeName }" v-for="item in styleList" :key="item.path" @click="handleChangeView(item)">-->
+      {{ item.name }}
+   </li>
   </ul>
 </template>
 
@@ -16,13 +16,13 @@ export default defineComponent({
   },
   emits: ["click"],
   setup() {
-    // const { proxy } = getCurrentInstance();
-    //
-    // function handleChangeView(item) {
-    //   proxy.$emit("click", item.path, item.name);
-    // }
+    const { proxy } = getCurrentInstance() as any;
+
+    function handleChangeView(item) {
+      proxy.$emit("click", item.path, item.name);
+    }
     return {
-   //   handleChangeView,
+      handleChangeView,
     };
   },
 });
