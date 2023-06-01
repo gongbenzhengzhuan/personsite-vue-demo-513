@@ -36,6 +36,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import(/* webpackChunkName: "about" */ '../views/auth/RoleView.vue')
       },
       {
+        path: '/yinHeader',
+        name: 'yinHeader',
+        component: () => import(/* webpackChunkName: "about" */ '../components/layouts/YinHeader.vue')
+      },
+      {
         path: '/userCrudView',
         name: 'userCrudView',
         component: () => import(/* webpackChunkName: "about" */ '../views/auth/UserCrudView.vue')
