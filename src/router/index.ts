@@ -50,6 +50,11 @@ const routes: Array<RouteRecordRaw> = [
         name: 'injectEchartView',
         component: () => import(/* webpackChunkName: "about" */ '../views/client/InjectEchartView.vue')
       },
+      {
+        path: '/textEditView',
+        name: 'textEditView',
+        component: () => import(/* webpackChunkName: "about" */ '../views/client/TextEditView.vue')
+      },
     ],
   }
 ]
