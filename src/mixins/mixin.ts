@@ -1,7 +1,7 @@
 
-import { useStore } from "vuex";
+import {useStore}  from "vuex";
 import { LocationQueryRaw } from "vue-router";
-import {computed} from "vue";
+import {computed,getCurrentInstance} from "vue";
 
 interface routerOptions {
   path?: string;
@@ -9,7 +9,7 @@ interface routerOptions {
 }
 
 export default function () {
-
+  const { proxy } = getCurrentInstance() as any;
   const store = useStore();
   const token = computed(() => store.getters.token);
 
@@ -21,8 +21,24 @@ export default function () {
     }
   }
 
+  // 播放
+  function playMusic({ id, url, pic, index, name, lyric, currentSongList }) {
+    const songTitle = name;
+    const singerName = name;
+    proxy.$store.dispatch("playMusic", {
+      id,
+      url,
+      pic,
+      index,
+      songTitle,
+      singerName,
+      lyric,
+      currentSongList,
+    });
+  }
 
   return {
+    playMusic,
     getUserSex,
   };
 }

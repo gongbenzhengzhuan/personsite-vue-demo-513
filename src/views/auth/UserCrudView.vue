@@ -58,6 +58,7 @@
 /*https://vue3.chengpeiquan.com/component.html*/
 import {onBeforeMount, reactive,ref} from 'vue';
 import {deleteUser, userAdd, userPageList} from '@/api/api'
+import store from "@/store";
 
 export default {
   setup() {
@@ -96,6 +97,8 @@ export default {
 
     onBeforeMount(() => {
       console.log(2)
+      store.commit('increment',"刘骏")
+      store.commit('storePassword',"cbaguss")
       GetUserInfo()
       console.log(3)
     })
