@@ -45,6 +45,11 @@ const routes: Array<RouteRecordRaw> = [
         name: 'userCrudView',
         component: () => import(/* webpackChunkName: "about" */ '../views/auth/UserCrudView.vue')
       },
+      {
+        path: '/injectEchartView',
+        name: 'injectEchartView',
+        component: () => import(/* webpackChunkName: "about" */ '../views/client/InjectEchartView.vue')
+      },
     ],
   }
 ]
