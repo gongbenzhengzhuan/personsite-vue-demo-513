@@ -34,6 +34,12 @@
     页数：<input type="number" placeholder="请输入页数" v-model="productInfo.pageSize">
   </div>
 
+  <div id="text">
+    原始文本：<input type="text" placeholder="原始文本" v-model="productInfo.textFirst">
+    比较文本：<input type="text" placeholder="比较文本" v-model="productInfo.textSecond">
+    <el-button type="info" size="small" @click="TextDiff()">查看相似度</el-button>
+    <span>相似度：{{ textSimilarity }}</span>
+  </div>
 
   <!-- 模式窗口 -->
   <fieldset>
@@ -57,8 +63,9 @@
 <script lang="ts">
 /*https://vue3.chengpeiquan.com/component.html*/
 import {onBeforeMount, reactive,ref} from 'vue';
-import {deleteUser, userAdd, userPageList} from '@/api/api'
+import {deleteUser, userAdd, userPageList,getArticleDiff} from '@/api/api'
 import store from "@/store";
+const textSimilarity = ref();
 
 export default {
   setup() {
@@ -104,7 +111,7 @@ export default {
     })
 
     // 文本框双向绑定的值
-    const productInfo = reactive({id: "", login: "", password: "", role: "",pageIndex:"1",pageSize:"10"});
+    const productInfo = reactive({id: "", login: "", password: "", role: "",pageIndex:"1",pageSize:"10",textFirst:"向天再借五百年",textSecond:"向天再借五百年"});
 
     // 删除功能，传索引行数
     function del(index: number, id: number) {
@@ -118,6 +125,22 @@ export default {
       // splice方法，传两个参数：第几行开始，删除多少条（如果未规定此参数，则删除从 index 开始到原数组结尾的所有元素）
       tableData.splice(index, 1)
 
+    }
+
+    //查看功能
+    function TextDiff() {
+      const dataForm = {
+        content_first:productInfo.textFirst,
+        content_second:productInfo.textSecond
+      }
+
+      getArticleDiff(dataForm).then(
+          response => {
+            let data = response.data;
+            console.log("textdiff:"+data)
+            textSimilarity.value=data
+          }
+      )
     }
 
     //查看功能
@@ -221,7 +244,7 @@ export default {
     }
 
     // 暴露方法到页面上
-    return {tableData, del, productInfo, add, show, update, GetUserInfo,options}
+    return {tableData, del, productInfo, add, show, update, GetUserInfo,options,TextDiff,textSimilarity}
   }
 }
 </script>

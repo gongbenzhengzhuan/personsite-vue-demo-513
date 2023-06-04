@@ -20,6 +20,14 @@ export function getArticleList (id) {
     })
 }
 
+export const getArticleDiff=(data)=> {
+    return request({
+        url: '/vue-project/algorithm/editDistance',
+        method: 'post',
+        data
+    })
+}
+
 export const alldata=(data)=> {
     return request({
         url: '/vue-huawei/datasystem-client/workbenchSearchForLog/pageList',
