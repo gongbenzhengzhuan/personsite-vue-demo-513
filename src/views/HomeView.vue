@@ -8,6 +8,7 @@
     <router-link to="/yinHeader">音乐界面</router-link> |
     <router-link to="/injectEchartView">统计图界面</router-link> |
     <router-link to="/textEditView">富文本界面</router-link> |
+    <router-link to="/algorithmView">算法界面</router-link> |
     <router-link to="/monitor">监控界面</router-link>
   </nav>
   <router-view/>

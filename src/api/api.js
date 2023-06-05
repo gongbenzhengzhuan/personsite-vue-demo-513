@@ -20,6 +20,14 @@ export function getArticleList (id) {
     })
 }
 
+export function getKeyword (content) {
+    return request({
+        url: '/vue-project/algorithm/getKeyword?content='+content,
+        method: 'GET',
+        content
+    })
+}
+
 export const getArticleDiff=(data)=> {
     return request({
         url: '/vue-project/algorithm/editDistance',

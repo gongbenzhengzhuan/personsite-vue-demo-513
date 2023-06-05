@@ -55,6 +55,11 @@ const routes: Array<RouteRecordRaw> = [
         name: 'textEditView',
         component: () => import(/* webpackChunkName: "about" */ '../views/client/TextEditView.vue')
       },
+      {
+        path: '/algorithmView',
+        name: 'algorithmView',
+        component: () => import(/* webpackChunkName: "about" */ '../views/client/AlgorithmView.vue')
+      },
     ],
   }
 ]

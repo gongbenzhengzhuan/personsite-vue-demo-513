@@ -34,13 +34,6 @@
     页数：<input type="number" placeholder="请输入页数" v-model="productInfo.pageSize">
   </div>
 
-  <div id="text">
-    原始文本：<input type="text" placeholder="原始文本" v-model="productInfo.textFirst">
-    比较文本：<input type="text" placeholder="比较文本" v-model="productInfo.textSecond">
-    <el-button type="info" size="small" @click="TextDiff()">查看相似度</el-button>
-    <span>相似度：{{ textSimilarity }}</span>
-  </div>
-
   <!-- 模式窗口 -->
   <fieldset>
     <legend>用户详情</legend>
